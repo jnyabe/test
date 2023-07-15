@@ -4,14 +4,15 @@ CC = clang++
 FLAGS = -std=c++17
 LDFLAGS =
 LIBS = -lcppunit
+BIN = http_client_test
 
 .cpp.o:
 	$(CC) $(FLAGS) -o $@ -c $<
 
-http_client: $(OBJS)
+http_client_test: $(OBJS)
 	$(CC) $(FLAGS) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
 
-all: http_client
+all: $(BIN)
 
 clean:
-	-$(RM) http_client $(OBJS) *~
+	-$(RM) $(BIN) $(OBJS) *~
