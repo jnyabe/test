@@ -1,14 +1,17 @@
 SRCS = $(wildcard *.cpp)
 OBJS = $(SRCS:.cpp=.o)
 CC = clang++
+FLAGS = -std=c++17
+LDFLAGS =
+LIBS = -lcppunit
 
 .cpp.o:
-	$(CC) -o $@ -c $<
+	$(CC) $(FLAGS) -o $@ -c $<
 
 http_client: $(OBJS)
-	$(CC) -o $@ $(OBJS)
+	$(CC) $(FLAGS) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
 
 all: http_client
 
 clean:
-	-$(RM) http_client $(OBJS)
+	-$(RM) http_client $(OBJS) *~
