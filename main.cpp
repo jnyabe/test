@@ -11,7 +11,7 @@
 #include "http_client.h"
 #include "debug.h"
 
-#define TEST_OUTPUT_FILE "test_result.xml"
+#define TEST_OUTPUT_FILE "http_client_test-result.xml"
 
 int main(int argc, const char** argv)
 {
